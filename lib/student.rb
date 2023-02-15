@@ -11,4 +11,7 @@ attr_reader :details, :name, :age, :scores
     @scores << score
   end
 
+  def grade
+    scores.sum.fdiv(scores.size)
+  end
 end
