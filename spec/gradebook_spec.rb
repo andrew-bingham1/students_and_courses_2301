@@ -18,7 +18,7 @@ RSpec.describe Gradebook do
     it 'can add courses' do
       gradebook = Gradebook.new("Prof. Goose")
       course_1 = Course.new("Calculus", 2) 
-      course_2 = Course.new("Geogrpahy", 5)
+      course_2 = Course.new("Geography", 5)
 
       gradebook.add_course(course_1)
       gradebook.add_course(course_2)
@@ -37,6 +37,29 @@ RSpec.describe Gradebook do
       course_1.enroll(student1) 
     
       expect(gradebook.list_all_students["Calculus"].first).to be_a Student
+    end
+  end
+
+  describe 'students below' do
+    it 'can find students below' do
+      gradebook = Gradebook.new("Prof. Goose")
+      course_1 = Course.new("Calculus", 2) 
+      course_2 = Course.new("Geography", 5)
+      student1 = Student.new({name: "Morgan", age: 21})
+      student2 = Student.new({name: "Jordan", age: 29})
+      
+      
+      gradebook.add_course(course_1)
+      gradebook.add_course(course_2)
+      gradebook.course.enroll(student1) 
+      gradebook.course.enroll(student2) 
+
+      gradebook.course_1.student_1.log_score(89)
+      gradebook.course_2.student_1.log_score(89)
+      gradebook.course_1.student_2.log_score(78) 
+      gradebook.course_2.student_2.log_score(78) 
+
+      expect(students_below(80))to. eq(student_2)
     end
   end
 end
