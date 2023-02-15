@@ -23,9 +23,10 @@ RSpec.describe do
   end
 
   describe '#scores' do
-    it 'can check scores'
+    it 'can check scores' do
       student = Student.new({name: "Morgan", age: 21})
 
       expect(student.scores).to eq([])
+    end
   end
 end
