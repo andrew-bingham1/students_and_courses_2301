@@ -10,6 +10,7 @@ RSpec.describe Gradebook do
 
       expect(gradebook).to be_a Gradebook
       expect(gradebook.instructor).to eq("Prof. Goose")
+      expect(gradebook.courses).to eq([])
     end
   end
 end
