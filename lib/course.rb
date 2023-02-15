@@ -16,9 +16,10 @@ class Course
 
   def enroll(student)
     if @students.count == @capacity
+      puts "Class is full"
     else
       @students << student
     end
   end
-  
+
 end
