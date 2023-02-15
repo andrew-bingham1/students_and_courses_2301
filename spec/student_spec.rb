@@ -1,7 +1,7 @@
 require 'rspec'
 require './lib/student'
 
-RSpec.describe do 
+RSpec.describe Student do 
   describe '#initialize' do
     it 'can initialize' do 
       student = Student.new({name: "Morgan", age: 21}) 
@@ -49,5 +49,5 @@ RSpec.describe do
       expect(student.grade).to eq(83.5)
     end
   end
-  
+
 end
