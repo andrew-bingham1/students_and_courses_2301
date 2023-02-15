@@ -26,4 +26,20 @@ RSpec.describe Gradebook do
       expect(gradebook.courses.count).to eq(2)
     end
   end
+
+  describe '#list_all_students' do
+    it 'can list all students' do 
+      gradebook = Gradebook.new("Prof. Goose")
+      course_1 = Course.new("Calculus", 2) 
+      course_2 = Course.new("Geogrpahy", 5)
+      student1 = Student.new({name: "Morgan", age: 21})
+      student2 = Student.new({name: "Jordan", age: 29})
+      
+      course_1.enroll(student1) 
+      course_2.enroll(student1)
+      course_2.enroll(student2) 
+
+      expect(gradebook.list_all_students).to be Hash
+    end
+  end
 end
