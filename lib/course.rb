@@ -12,7 +12,13 @@ class Course
     else
       return false
     end
+  end
 
+  def enroll(student)
+    if @students.count == @capacity
+    else
+      @students << student
+    end
   end
   
 end
