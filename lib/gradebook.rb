@@ -11,4 +11,9 @@ class Gradebook
     @courses << course
   end
   
+  def list_all_students
+    courses.each_with_object({}) do |course, hash|
+      hash[course.name] = course.students
+    end
+  end
 end
