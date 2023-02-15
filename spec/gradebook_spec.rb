@@ -20,8 +20,8 @@ RSpec.describe Gradebook do
       course_1 = Course.new("Calculus", 2) 
       course_2 = Course.new("Geogrpahy", 5)
 
-      add_course(course_1)
-      add_course(course_2)
+      gradebook.add_course(course_1)
+      gradebook.add_course(course_2)
 
       expect(gradebook.courses.count).to eq(2)
     end
