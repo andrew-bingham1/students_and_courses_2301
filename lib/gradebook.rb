@@ -16,4 +16,15 @@ class Gradebook
       hash[course.name] = course.students
     end
   end
+
+  def students_below(threshold)
+    students_below_arr = []
+    self.courses[:student].each do |student|
+      if student.grade < threshold
+        students_below_arr << student
+      end
+    end
+    students_below_arr
+  end
+
 end

@@ -45,21 +45,23 @@ RSpec.describe Gradebook do
       gradebook = Gradebook.new("Prof. Goose")
       course_1 = Course.new("Calculus", 2) 
       course_2 = Course.new("Geography", 5)
-      student1 = Student.new({name: "Morgan", age: 21})
-      student2 = Student.new({name: "Jordan", age: 29})
+      student_1 = Student.new({name: "Morgan", age: 21})
+      student_2 = Student.new({name: "Jordan", age: 29})
       
       
       gradebook.add_course(course_1)
       gradebook.add_course(course_2)
-      gradebook.course.enroll(student1) 
-      gradebook.course.enroll(student2) 
+      course_1.enroll(student_1) 
+      course_1.enroll(student_2) 
+      course_2.enroll(student_1) 
+      course_2.enroll(student_2) 
 
-      gradebook.course_1.student_1.log_score(89)
-      gradebook.course_2.student_1.log_score(89)
-      gradebook.course_1.student_2.log_score(78) 
-      gradebook.course_2.student_2.log_score(78) 
+      student_1.log_score(89)
+      student_1.log_score(89)
+      student_2.log_score(78) 
+      student_2.log_score(78) 
 
-      expect(students_below(80))to. eq(student_2)
+      expect(students_below(80)).to eq(student_2)
     end
   end
 end
